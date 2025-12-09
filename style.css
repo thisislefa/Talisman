@@ -1,0 +1,208 @@
+ /* PREFIX: fbx-s2-
+    This prefix is used to ensure class names are unique and do not conflict with other stylesheets.
+  */
+
+  :root {
+    --fbx-s2-font-family: 'Inter', sans-serif;
+    --fbx-s2-bg-color: #f5f5f7;
+    --fbx-s2-text-color-primary: #1d1d1f;
+    --fbx-s2-text-color-secondary: #6e6e73;
+    --fbx-s2-card-bg-white: #ffffff;
+    --fbx-s2-border-radius: 8px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fbx-s2-font-family);
+    background-color: var(--fbx-s2-bg-color);
+  }
+
+  /* Main Section Container */
+  .fbx-s2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Main Heading */
+  .fbx-s2-heading {
+    font-size: 56px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.1;
+    color: var(--fbx-s2-text-color-primary);
+    margin-bottom: 80px;
+    max-width: 800px;
+  }
+
+  /* Grid Layout for Cards */
+  .fbx-s2-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    width: 100%;
+    /* Define the layout structure */
+    grid-template-areas:
+      "left-top center right"
+      "left-bottom center right";
+  }
+
+  /* Common Card Styles */
+  .fbx-s2-card {
+    border-radius: var(--fbx-s2-border-radius);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .fbx-s2-card--white {
+    background-color: var(--fbx-s2-card-bg-white);
+    padding: 32px;
+  }
+
+  /* --- Top Left Card (Avatars) --- */
+  .fbx-s2-card-avatars {
+    grid-area: left-top;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+  }
+
+  .fbx-s2-avatar-group {
+    display: flex;
+    margin-right: 24px;
+  }
+
+  .fbx-s2-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--fbx-s2-card-bg-white);
+    object-fit: cover;
+  }
+  
+  .fbx-s2-avatar:not(:first-child) {
+    margin-left: -15px;
+  }
+
+  .fbx-s2-avatar-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--fbx-s2-text-color-primary);
+    line-height: 1.4;
+  }
+
+  .fbx-s2-text-highlight {
+    font-weight: 700;
+  }
+
+  /* --- Bottom Left Card (Credit Card) --- */
+  .fbx-s2-card-credit {
+    grid-area: left-bottom;
+    min-height: 300px;
+  }
+  
+  .fbx-s2-card-credit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* --- Center Card (Astronaut) --- */
+  .fbx-s2-card-astronaut {
+    grid-area: center;
+    position: relative;
+    min-height: 500px; /* Ensure it's tall */
+  }
+
+  .fbx-s2-card-astronaut img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .fbx-s2-astronaut-content {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    color: #ffffff;
+  }
+
+  .fbx-s2-stat-number {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .fbx-s2-stat-label {
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 150px;
+  }
+
+  /* --- Right Card (Products) --- */
+  .fbx-s2-card-products {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+  }
+
+  .fbx-s2-product-image-container {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .fbx-s2-product-image {
+    width: 170px;
+    border-radius: 8px;
+    height: auto;
+    display: block;
+  }
+
+  .fbx-s2-product-heading {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--fbx-s2-text-color-primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .fbx-s2-product-description {
+    font-size: 16px;
+    color: var(--fbx-s2-text-color-secondary);
+    line-height: 1.6;
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 1024px) {
+    .fbx-s2-heading {
+        font-size: 40px;
+    }
+    .fbx-s2-grid-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "left-top"
+            "left-bottom"
+            "center"
+            "right";
+        gap: 20px;
+    }
+    .fbx-s2-card-astronaut, .fbx-s2-card-products {
+        min-height: auto;
+    }
+    .fbx-s2-card-credit {
+        min-height: 250px;
+    }
+  }
