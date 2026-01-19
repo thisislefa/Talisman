@@ -3,9 +3,11 @@
 ## Overview
 Talisman is a complex grid layout component that combines multiple content types (avatars, images, statistics, product showcases) in an asymmetrical 3×2 arrangement. Designed for agency portfolios and brand showcases, it creates visual interest through varied content areas within a cohesive grid system.
 
+<img width="1920" height="1318" alt="talisman" src="https://github.com/user-attachments/assets/e4cee720-bd18-4731-b3bf-c748546f3363" />
+
 ## Live Demo
 
-[View Talisman](https://thisislefa.github.io/Talisman)
+[View Talisman](https://lefajmofokeng.github.io/Talisman)
 
 
 
